@@ -10,6 +10,7 @@
 
 if ($result){
     $_SESSION['username'] = $result['username'];
+    header(header: 'location: ../admin.php');
 }
 else{
     echo 'niet ingelogd';

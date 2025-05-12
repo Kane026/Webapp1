@@ -13,6 +13,7 @@
 
 <body>
     <main>
+    <div class="menu-kaart-wrapper">
     <div class="menu-kaart"> 
         <img src="assets/img/header-shibuya-eats.png" class="menu-header">
             <div class="menu-background">
@@ -29,9 +30,12 @@ include('./dbcalls/read.php');
 //Het loopen van de database gegevens
 foreach ($result as $value) {
     echo '<div class="menu-item-box">';
-    echo '<br> <h1>productnaam:</h1> ' . $value['ProductNaam'];
-    echo '<br> <h1>prijs:</h1> ' . $value['Prijs'];
-    echo '<br> <h1>afbeelding:</h1> ' . '<img src="' . $value['img'] . '">';
+    echo '<br>' . '<img src="' . $value['img'] . '">';
+    echo '<br> ' . $value['ProductNaam'];
+    echo '<br> ' . $value['Prijs'];
+    echo '<br> <span class="beschrijving">' . $value['Beschrijving'] . '</span>';
+    echo '<img src="assets/img/chopstick-plus.png" alt="chopstick-plus" class="chopstick-plus">';
+
 
     echo '</div>';
 }
@@ -39,6 +43,15 @@ foreach ($result as $value) {
     </div>
     </div>
 
+<div class="winkelmandje">
+    <div class="winkelmandje-header">
+    <h1>Winkelmandje</h1>
+    <img src="assets/img/shopping-cart-icon.svg" alt="shopping-cart-icon" width="40px">
+    </div>
+    <hr>
+
+</div>
+</div>
 
     </main>
 </body>
